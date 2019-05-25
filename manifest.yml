@@ -1,0 +1,9 @@
+package: myhouse-service-weatherchannel
+revision: 1
+version: development
+git: myhouse-project/myhouse-service-weatherchannel
+modules:
+  - service/weatherchannel
+default_config:
+  - service/weatherchannel:
+      api_key: 
