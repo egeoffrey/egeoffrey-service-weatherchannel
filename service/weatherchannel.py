@@ -15,12 +15,12 @@
 
 import json
  
-from sdk.module.service import Service
-from sdk.utils.datetimeutils import DateTimeUtils
+from sdk.python.module.service import Service
+from sdk.python.utils.datetimeutils import DateTimeUtils
 
-import sdk.utils.web
-import sdk.utils.numbers
-import sdk.utils.exceptions as exception
+import sdk.python.utils.web
+import sdk.python.utils.numbers
+import sdk.python.utils.exceptions as exception
 
 class Weatherchannel(Service):
    # What to do when initializing
@@ -67,7 +67,7 @@ class Weatherchannel(Service):
             else:
                 url = self.url+location+'/'+self.get_request_type(request)+'/wwir.json?apiKey='+sekf.config['api_key']+'&units='+unit+'&language='+self.language
                 try:
-                    data = sdk.utils.web.get(url)
+                    data = sdk.python.utils.web.get(url)
                 except Exception,e: 
                     self.log_error("unable to connect to "+url+": "+exception.get(e))
                     return
