@@ -38,7 +38,7 @@ class Weatherchannel(Service):
         self.add_configuration_listener(self.fullname, True)
 
     # map between user requests and openweathermap requests
-    def get_request_type(self,request):
+    def get_request_type(self, request):
         if request in ["alerts"]: return "forecast"
         return None
     
@@ -56,7 +56,7 @@ class Weatherchannel(Service):
             if not self.is_valid_configuration(["request", "latitude", "longitude"], message.get_data()): return
             sensor_id = message.args
             request = message.get("request")
-            location = str(message.get("latitude"))+","+str(message.get("longitude"))
+            location = str(message.get("latitude"))+"/"+str(message.get("longitude"))
             if self.get_request_type(request) is None:
                 self.log_error("invalid request "+request)
                 return
@@ -65,7 +65,8 @@ class Weatherchannel(Service):
             if self.cache.find(cache_key): 
                 data = self.cache.get(cache_key)
             else:
-                url = self.url+location+'/'+self.get_request_type(request)+'/wwir.json?apiKey='+sekf.config['api_key']+'&units='+unit+'&language='+self.language
+                url = self.url+location+'/'+self.get_request_type(request)+'/wwir.json?apiKey='+self.config['api_key']+'&language='+self.language
+                print url
                 try:
                     data = sdk.python.utils.web.get(url)
                 except Exception,e: 
@@ -76,7 +77,7 @@ class Weatherchannel(Service):
             try: 
                 parsed_json = json.loads(data)
             except Exception,e: 
-                self.log_error("invalid JSON returned")
+                self.log_error("invalid JSON returned: "+data)
                 return
             # reply to the requesting module 
             message.reply()
