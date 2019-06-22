@@ -2,7 +2,7 @@ package: myhouse-service-weatherchannel
 revision: 3
 version: development
 github: myhouse-project/myhouse-service-weatherchannel
-dockerhub: myhouse-project/myhouse-service-weatherchannel
+dockerhub: myhouseproject/myhouse-service-weatherchannel
 description: Retrieve weather information from weatherchannel
 tags: service weather alert
 modules:
