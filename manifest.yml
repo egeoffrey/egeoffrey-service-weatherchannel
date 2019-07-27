@@ -1,9 +1,27 @@
+manifest_schema: 1
 package: myhouse-service-weatherchannel
-revision: 3
+revision: 4
 version: development
 github: myhouse-project/myhouse-service-weatherchannel
 dockerhub: myhouseproject/myhouse-service-weatherchannel
 description: Retrieve weather information from weatherchannel
 tags: service weather alert
 modules:
-  - service/weatherchannel
+  - service/weatherchannel:
+      description: Retrieve weather information from weatherchannel
+      service_configuration: 
+        active: 
+          - name: request
+            description: What to request
+            format: alerts
+            required: true
+          - name: latitude
+            description: The latitude of the location
+            placeholder: 12.33
+            required: true
+            format: float
+          - name: longitude
+            description: The longitude of the location
+            placeholder: 70.11
+            required: true
+            format: float
