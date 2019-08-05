@@ -2,6 +2,7 @@ branch: development
 description: Retrieve weather information from weatherchannel
 dockerhub: myhouseproject/myhouse-service-weatherchannel
 github: myhouse-project/myhouse-service-weatherchannel
+icon: cloud-sun
 manifest_schema: 2
 modules:
 - service/weatherchannel:
@@ -23,6 +24,6 @@ modules:
         placeholder: 70.11
         required: true
 package: myhouse-service-weatherchannel
-revision: 5
+revision: 6
 tags: service weather alert
 version: 1.0
