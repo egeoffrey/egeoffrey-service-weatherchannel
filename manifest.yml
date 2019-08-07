@@ -1,7 +1,7 @@
 branch: development
 description: Retrieve weather information from weatherchannel
-dockerhub: myhouseproject/myhouse-service-weatherchannel
-github: myhouse-project/myhouse-service-weatherchannel
+dockerhub: egeoffrey/egeoffrey-service-weatherchannel
+github: egeoffrey/egeoffrey-service-weatherchannel
 icon: cloud-sun
 manifest_schema: 2
 modules:
@@ -23,7 +23,7 @@ modules:
         name: longitude
         placeholder: 70.11
         required: true
-package: myhouse-service-weatherchannel
-revision: 6
+package: egeoffrey-service-weatherchannel
+revision: 7
 tags: service weather alert
 version: 1.0
