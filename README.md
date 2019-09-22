@@ -63,4 +63,4 @@ service weather alert
 
 ## Version
 
-The version of this egeoffrey-service-weatherchannel is 1.0-12 on the development branch.
+The version of this egeoffrey-service-weatherchannel is 1.0-13 on the master branch.
